@@ -163,6 +163,7 @@ cython_debug/
 
 # dependencies
 /node_modules
+FRONT_END/node_modules
 /.pnp
 .pnp.*
 .yarn/*

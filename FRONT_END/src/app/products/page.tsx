@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Chewy } from "next/font/google";
+import Link from 'next/link';
 
 const chewyFont = Chewy({ subsets: ["latin"], weight: "400" });
 
@@ -16,9 +17,11 @@ const ProductPage = () => {
     return (
         <div style={{ backgroundColor: 'rgb(245 244 227)' }}>
             <div style={{ backgroundColor: 'rgb(178 192 176)' }} className="h-14 flex justify-between items-center">
-                <a href="/" className="w-14 px-2">
-                    <Image src="/New_Hacks-removebg-preview.png" alt="Logo" width={56} height={56} />
-                </a>
+                <Link href="/">    
+                    <a className="w-14 px-2">
+                        <Image src="/New_Hacks-removebg-preview.png" alt="Logo" width={56} height={56} />
+                    </a>
+                </Link>
                 <input type="search" name="query" placeholder="Search" className="border flex-1 h-10 rounded mx-20 px-2" />
                 <div className="w-12 pr-2">
                     <svg style={{ fill: '#565656' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -31,7 +34,7 @@ const ProductPage = () => {
                     <Image style={{ width: '80%', borderRadius: '15px' }} className="mx-auto shadow-md hover:shadow-inner" src="/static/images/labour.jpg" alt="Product" width={500} height={500} />
                 </div>
                 <div className="flex-1 flex flex-col relative">
-                    <div style={{ fontFamily: 'Chewy' }} className="text-6xl mb-px">{listing["product name"]}</div>
+                    <div className={`${chewyFont.className} text-6xl mb-px`}>{listing["product name"]}</div>
                     <div className="mb-10 underline">{listing.location}</div>
                     <div className="pr-5 leading-loose text-lg">{listing.description}</div>
                     <a href="mailto:abc@gmail.com" className="absolute mt-10 underline bottom-10 z-10">Connect!</a>
